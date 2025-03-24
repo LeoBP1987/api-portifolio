@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'storages',
     'django_filters',
     'oauth2_provider',
+    'corsheaders',
 ]
 
 # Atualizando base de usuarios customizados
@@ -40,6 +41,7 @@ AUTH_USER_MODEL = 'portifolio.UsuariosCustomizados'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -178,5 +180,5 @@ AUTHENTICATION_BACKENDS = (
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5173"
 ]
