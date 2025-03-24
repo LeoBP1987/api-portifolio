@@ -120,7 +120,7 @@ STORAGES = {
                 "secret_key": str(os.getenv("R2_SECRET_ACCESS_KEY")),
                 "bucket_name": str(os.getenv("R2_STORAGE_BUCKET_NAME")),
                 "endpoint_url": str(os.getenv("R2_ENDPOINT")),
-                "custom_domain": str(os.getenv("R2_CUSTOM_DOMAIN")),
+                "custom_domain": str(os.getenv("R2_ENDPOINT_PUBLIC")),
                 "location": "media",  
             },
         },
