@@ -119,9 +119,9 @@ STORAGES = {
                 "access_key": str(os.getenv("R2_ACCESS_KEY_ID")),
                 "secret_key": str(os.getenv("R2_SECRET_ACCESS_KEY")),
                 "bucket_name": str(os.getenv("R2_STORAGE_BUCKET_NAME")),
-                "endpoint_url": "https://626ebd951efc663e718a48a8fcc0dce5.r2.cloudflarestorage.com/",
+                "endpoint_url": str(os.getenv("R2_ENDPOINT")),
                 "custom_domain": str(os.getenv("R2_CUSTOM_DOMAIN")),
-                "location": "static",  
+                "location": "media",  
             },
         },
         "staticfiles": {
@@ -156,7 +156,7 @@ STATIC_URL = f'https://{os.getenv("R2_ENDPOINT_PUBLIC")}/static/'
 
 MEDIA_URL = f'https://{os.getenv("R2_ENDPOINT_PUBLIC")}/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
