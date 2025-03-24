@@ -7,7 +7,7 @@ class UsuariosCustomizados(AbstractUser):
     username=models.CharField(max_length=150, null=False, blank=False, unique=True)
     email=models.EmailField(max_length=150, null=False, blank=False, unique=True)
     password=models.CharField(max_length=150, null=False, blank=False)
-    descricao=models.TextField(max_length=300, null=False, blank=False)
+    descricao=models.TextField(max_length=600, null=False, blank=False)
     sobreMim = ArrayField(
         models.TextField(blank=True, null=True),
         blank=True,
