@@ -1,6 +1,7 @@
-from pathlib import Path, os
+from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
+import os
 
 load_dotenv()
 
@@ -14,7 +15,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
