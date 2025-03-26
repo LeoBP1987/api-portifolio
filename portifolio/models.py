@@ -44,6 +44,3 @@ class Projetos(models.Model):
     )
     linkDeploy=models.URLField(max_length=300)
     linkCodigoFonte=models.URLField(max_length=300)
-
-
-
