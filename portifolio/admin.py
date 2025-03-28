@@ -20,10 +20,10 @@ class TecnologiasAdmin(admin.ModelAdmin):
 admin.site.register(Tecnologias, TecnologiasAdmin)
 
 class ProjetosAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'ordem', 'descricaoCurta', 'linkDeploy', 'linkCodigoFonte')
-    list_display_links = ('nome', 'descricaoCurta', 'linkDeploy', 'linkCodigoFonte')
+    list_display = ('id', 'nome', 'ordem', 'descricaoCurta', 'linkDeploy', 'linkRepositorio')
+    list_display_links = ('nome', 'descricaoCurta', 'linkDeploy', 'linkRepositorio')
     list_per_page = 10
-    search_fields = ('nome', 'descricaoCurta', 'linkDeploy', 'linkCodigoFonte')
+    search_fields = ('nome', 'descricaoCurta', 'linkDeploy', 'linkRepositorio')
     ordering = ('nome',)
 
 admin.site.register(Projetos, ProjetosAdmin)

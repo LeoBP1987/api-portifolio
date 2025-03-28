@@ -44,4 +44,4 @@ class Projetos(models.Model):
         default=list
     )
     linkDeploy=models.URLField(max_length=300, blank=True, null=True)
-    linkCodigoFonte=models.URLField(max_length=300, blank=True, null=True)
+    linkRepositorio=models.URLField(max_length=300, blank=True, null=True)
