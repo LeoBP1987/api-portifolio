@@ -31,16 +31,16 @@ class Projetos(models.Model):
     nome=models.CharField(max_length=150, null=False, blank=False)
     imagem_capa=models.ImageField(upload_to='imagens_capa/', null=False, blank=False)
     descricaoCurta=models.TextField(max_length=300, null=False, blank=False)
-    descricaoLonga=models.TextField()
-    linkVideoDemonstracao=models.URLField(max_length=300)
+    descricaoLonga=models.TextField(blank=True, null=True)
+    linkVideoDemonstracao=models.URLField(max_length=300, blank=True, null=True)
     imagemDemonstracao=models.ImageField(upload_to='imagens_demonstracao/', null=False, blank=False)
-    descricaoBackEnd=models.TextField()
-    descricaoFrontEnd=models.TextField()
+    descricaoBackEnd=models.TextField(blank=True, null=True)
+    descricaoFrontEnd=models.TextField(blank=True, null=True)
     stacks=ArrayField(
         models.CharField(blank=True, null=True),
         blank=True,
         null=True,
         default=list
     )
-    linkDeploy=models.URLField(max_length=300)
-    linkCodigoFonte=models.URLField(max_length=300)
+    linkDeploy=models.URLField(max_length=300, blank=True, null=True)
+    linkCodigoFonte=models.URLField(max_length=300, blank=True, null=True)
