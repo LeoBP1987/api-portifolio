@@ -37,11 +37,6 @@ class Projetos(models.Model):
     imagemDemonstracao=models.ImageField(upload_to='imagens_demonstracao/', null=False, blank=False)
     descricaoBackEnd=models.TextField(blank=True, null=True)
     descricaoFrontEnd=models.TextField(blank=True, null=True)
-    stacks=ArrayField(
-        models.CharField(blank=True, null=True),
-        blank=True,
-        null=True,
-        default=list
-    )
+    stacks=models.CharField(max_length=300, blank=True, null=True)
     linkDeploy=models.URLField(max_length=300, blank=True, null=True)
     linkRepositorio=models.URLField(max_length=300, blank=True, null=True)
