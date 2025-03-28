@@ -25,10 +25,10 @@ class TecnologiasViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 class ProjetosViewSet(viewsets.ModelViewSet):
-    queryset = Projetos.objects.all().order_by('nome')
+    queryset = Projetos.objects.all().order_by('ordem')
     serializer_class = ProjetosSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    ordering_fields = ['nome', ]
+    ordering_fields = ['ordem', ]
     search_fields = ['id' ,'nome', ]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
