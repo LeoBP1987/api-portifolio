@@ -1,4 +1,3 @@
-from django.utils.safestring import mark_safe
 from rest_framework import serializers
 from portifolio.models import UsuariosCustomizados, Tecnologias, Projetos
 
@@ -13,19 +12,6 @@ class TecnologiasSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ProjetosSerializer(serializers.ModelSerializer):
-    descricaoLonga = serializers.SerializerMethodField()
-    descricaoBackEnd = serializers.SerializerMethodField()
-    descricaoFrontEnd = serializers.SerializerMethodField()
-
-    def get_descricaoLonga(self, obj):
-        return mark_safe(obj.descricaoLonga) if obj.descricaoLonga else None
-    
-    def get_descricaoBackEnd(self, obj):
-        return mark_safe(obj.descricaoBackEnd) if obj.descricaoBackEnd else None
-    
-    def get_descricaoFrontEnd(self, obj):
-        return mark_safe(obj.descricaoFrontEnd) if obj.descricaoFrontEnd else None
-
     class Meta:
         model = Projetos
         fields = '__all__'
