@@ -33,7 +33,7 @@ class Projetos(models.Model):
     ordem=models.IntegerField(db_index=True, null=False, blank=False, unique=True)
     imagem_capa=models.ImageField(upload_to='imagens_capa/', null=False, blank=False)
     descricaoCurta=models.TextField(max_length=300, null=False, blank=False)
-    descricaoLonga=MarkdownxField(max_length=600, null=False, blank=False)
+    descricaoLonga=MarkdownxField(max_length=600, null=True, blank=True)
     linkVideoDemonstracao=models.URLField(max_length=300, blank=True, null=True)
     imagemDemonstracao=models.ImageField(upload_to='imagens_demonstracao/', null=False, blank=False)
     descricaoBackEnd=models.TextField(blank=True, null=True)
