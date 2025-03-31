@@ -33,8 +33,7 @@ INSTALLED_APPS = [
     'storages',
     'django_filters',
     'oauth2_provider',
-    'corsheaders',
-    'markdownx',
+    'corsheaders'
 ]
 
 # Atualizando base de usuarios customizados

@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
-from markdownx.models import MarkdownxField
 
 class UsuariosCustomizados(AbstractUser):
     nome_completo=models.CharField(max_length=150, null=False, blank=False)
@@ -33,7 +32,7 @@ class Projetos(models.Model):
     ordem=models.IntegerField(db_index=True, null=False, blank=False, unique=True)
     imagem_capa=models.ImageField(upload_to='imagens_capa/', null=False, blank=False)
     descricaoCurta=models.TextField(max_length=300, null=False, blank=False)
-    descricaoLonga=MarkdownxField(max_length=6000, null=True, blank=True)
+    descricaoLonga=models.TextField(null=True, blank=True)
     linkVideoDemonstracao=models.URLField(max_length=300, blank=True, null=True)
     imagemDemonstracao=models.ImageField(upload_to='imagens_demonstracao/', null=False, blank=False)
     descricaoBackEnd=models.TextField(blank=True, null=True)

@@ -10,6 +10,5 @@ router.register('login', LoginViewSet, basename='Login')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    path('markdownx/', include('markdownx.urls'))
+    path('oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider'))
 ]
