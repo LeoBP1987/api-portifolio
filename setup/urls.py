@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('portifolio.urls'))
+    path('', include('portifolio.urls')),
+    path('markdownx/', include('markdownx.urls')),
 ]
 
 if settings.DEBUG:

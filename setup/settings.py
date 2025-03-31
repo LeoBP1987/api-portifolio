@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'storages',
     'django_filters',
     'oauth2_provider',
-    'corsheaders'
+    'corsheaders',
+    'markdownx',
 ]
 
 # Atualizando base de usuarios customizados
@@ -199,3 +200,9 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'Content-Type',
     'Authorization',
 ]
+
+# Configurações opcionais para o Markdownx
+MARKDOWNX_MEDIA_PATH = 'markdownx/'
+MARKDOWNX_UPLOAD_MAX_SIZE = 5242880
+MARKDOWNX_UPLOAD_CONTENT_TYPES = ['image/jpeg', 'image/png', 'image/svg+xml']
+MARKDOWNX_SERVER_CALL_LATENCY = 1000

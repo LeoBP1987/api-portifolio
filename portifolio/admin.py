@@ -1,5 +1,6 @@
 from django.contrib import admin
 from portifolio.models import UsuariosCustomizados, Tecnologias, Projetos
+from markdownx.admin import MarkdownxModelAdmin
 
 class UsuariosCustomizadosAdmin(admin.ModelAdmin):
     list_display = ('id', 'nome_completo', 'username', 'email')
@@ -19,7 +20,7 @@ class TecnologiasAdmin(admin.ModelAdmin):
 
 admin.site.register(Tecnologias, TecnologiasAdmin)
 
-class ProjetosAdmin(admin.ModelAdmin):
+class ProjetosAdmin(MarkdownxModelAdmin):
     list_display = ('id', 'nome', 'ordem', 'descricaoCurta', 'linkDeploy', 'linkRepositorio')
     list_display_links = ('nome', 'descricaoCurta', 'linkDeploy', 'linkRepositorio')
     list_per_page = 10
