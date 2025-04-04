@@ -100,6 +100,8 @@ def enviar_contato(request):
             destinatario,
             fail_silently=False,
         )
+
+        print(f'Enviando para {destinatario}')
         
         return Response({'sucesso': 'Mensagem enviada com sucesso'}, status=status.HTTP_200_OK)
     
