@@ -91,7 +91,7 @@ def enviar_contato(request):
         {data['mensagem']}
         """
         remetente = data['email']
-        destinatario = [settings.EMAIL_HOST_USER]
+        destinatario = [os.getenv('EMAIL_HOST_USER')]
         
         send_mail(
             assunto,
