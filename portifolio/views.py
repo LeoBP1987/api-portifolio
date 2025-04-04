@@ -1,6 +1,8 @@
 from rest_framework import viewsets, filters, status
+from django.core.mail import send_mail
+from django.conf import settings
 from rest_framework.response import Response
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from portifolio.models import UsuariosCustomizados, Tecnologias, Projetos
 from portifolio.serializers import UsuariosCustomizadosSerializer, TecnologiasSerializer, ProjetosSerializer
 from django_filters.rest_framework import DjangoFilterBackend
@@ -72,3 +74,34 @@ class LoginViewSet(viewsets.ViewSet):
 
         except requests.exceptions.RequestException as e:
             return Response({"error": f"Falha ao obter token de acesso: {str(e)}"}, status=status.HTTP_400_BAD_REQUEST)
+        
+@api_view(['POST'])
+def enviar_contato(request):
+    try:
+        data = request.data
+        
+        if not all([data.get('nome'), data.get('email'), data.get('mensagem')]):
+            return Response({'erro': 'Todos os campos são obrigatórios'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        assunto = f"Mensagem de contato de {data['nome']}"
+        mensagem = f"""
+        Nome: {data['nome']}
+        Email: {data['email']}
+        Mensagem:
+        {data['mensagem']}
+        """
+        remetente = data['email']
+        destinatario = [settings.EMAIL_HOST_USER]
+        
+        send_mail(
+            assunto,
+            mensagem,
+            remetente,
+            destinatario,
+            fail_silently=False,
+        )
+        
+        return Response({'sucesso': 'Mensagem enviada com sucesso'}, status=status.HTTP_200_OK)
+    
+    except Exception as e:
+        return Response({'erro': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
