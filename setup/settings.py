@@ -182,7 +182,9 @@ AUTHENTICATION_BACKENDS = (
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://portifolio-cr9um5w9e-leonardos-projects-c279e19b.vercel.app/"
+    "https://portifolio-7yj0wb5z0-leonardos-projects-c279e19b.vercel.app/",
+    "https://portifolio-git-main-leonardos-projects-c279e19b.vercel.app/",
+    "https://portifolio-leonardo-pereira.vercel.app/"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
